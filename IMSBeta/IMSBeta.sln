@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMSBeta", "IMSBeta.csproj", "{CD0466E8-5FA8-4853-99A2-3F894DF68C11}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F9078179-4E06-4F9D-8885-8145FFF4C3DF} = {F9078179-4E06-4F9D-8885-8145FFF4C3DF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModelLayer", "..\DataModelLayer\DataModelLayer.csproj", "{F9078179-4E06-4F9D-8885-8145FFF4C3DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD0466E8-5FA8-4853-99A2-3F894DF68C11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD0466E8-5FA8-4853-99A2-3F894DF68C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD0466E8-5FA8-4853-99A2-3F894DF68C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD0466E8-5FA8-4853-99A2-3F894DF68C11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9078179-4E06-4F9D-8885-8145FFF4C3DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9078179-4E06-4F9D-8885-8145FFF4C3DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9078179-4E06-4F9D-8885-8145FFF4C3DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9078179-4E06-4F9D-8885-8145FFF4C3DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {74542C45-C8C3-462C-A9BF-FC728144DB76}
+	EndGlobalSection
+EndGlobal

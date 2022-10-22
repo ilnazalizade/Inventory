@@ -1,0 +1,153 @@
+C:\AppDev1\Class1\IMSBeta\bin\Debug\IMSBeta.exe.config
+C:\AppDev1\Class1\IMSBeta\bin\Debug\IMSBeta.exe
+C:\AppDev1\Class1\IMSBeta\bin\Debug\IMSBeta.pdb
+C:\AppDev1\Class1\IMSBeta\bin\Debug\DataModelLayer.dll
+C:\AppDev1\Class1\IMSBeta\bin\Debug\EntityFramework.dll
+C:\AppDev1\Class1\IMSBeta\bin\Debug\EntityFramework.SqlServer.dll
+C:\AppDev1\Class1\IMSBeta\bin\Debug\Microsoft.Windows.Shell.dll
+C:\AppDev1\Class1\IMSBeta\bin\Debug\RibbonControlsLibrary.dll
+C:\AppDev1\Class1\IMSBeta\bin\Debug\DataModelLayer.pdb
+C:\AppDev1\Class1\IMSBeta\bin\Debug\DataModelLayer.dll.config
+C:\AppDev1\Class1\IMSBeta\bin\Debug\EntityFramework.xml
+C:\AppDev1\Class1\IMSBeta\bin\Debug\EntityFramework.SqlServer.xml
+C:\AppDev1\Class1\IMSBeta\bin\Debug\Microsoft.Windows.Shell.pdb
+C:\AppDev1\Class1\IMSBeta\bin\Debug\Microsoft.Windows.Shell.xml
+C:\AppDev1\Class1\IMSBeta\bin\Debug\RibbonControlsLibrary.pdb
+C:\AppDev1\Class1\IMSBeta\bin\Debug\RibbonControlsLibrary.xml
+C:\AppDev1\Class1\IMSBeta\obj\Debug\IMSBeta.csproj.AssemblyReference.cache
+C:\AppDev1\Class1\IMSBeta\obj\Debug\IMSBeta.csproj.SuggestedBindingRedirects.cache
+C:\AppDev1\Class1\IMSBeta\obj\Debug\theme\ShinyDarkPurple.baml
+C:\AppDev1\Class1\IMSBeta\obj\Debug\window\win_customer.g.cs
+C:\AppDev1\Class1\IMSBeta\obj\Debug\window\win_inventory.g.cs
+C:\AppDev1\Class1\IMSBeta\obj\Debug\window\win_main.g.cs
+C:\AppDev1\Class1\IMSBeta\obj\Debug\window\win_product.g.cs
+C:\AppDev1\Class1\IMSBeta\obj\Debug\window\win_productprice.g.cs
+C:\AppDev1\Class1\IMSBeta\obj\Debug\window\win_users.g.cs
+C:\AppDev1\Class1\IMSBeta\obj\Debug\win_login.g.cs
+C:\AppDev1\Class1\IMSBeta\obj\Debug\App.g.cs
+C:\AppDev1\Class1\IMSBeta\obj\Debug\IMSBeta_MarkupCompile.cache
+C:\AppDev1\Class1\IMSBeta\obj\Debug\IMSBeta_MarkupCompile.lref
+C:\AppDev1\Class1\IMSBeta\obj\Debug\App.baml
+C:\AppDev1\Class1\IMSBeta\obj\Debug\window\win_customer.baml
+C:\AppDev1\Class1\IMSBeta\obj\Debug\window\win_inventory.baml
+C:\AppDev1\Class1\IMSBeta\obj\Debug\window\win_main.baml
+C:\AppDev1\Class1\IMSBeta\obj\Debug\window\win_product.baml
+C:\AppDev1\Class1\IMSBeta\obj\Debug\window\win_productprice.baml
+C:\AppDev1\Class1\IMSBeta\obj\Debug\window\win_users.baml
+C:\AppDev1\Class1\IMSBeta\obj\Debug\win_login.baml
+C:\AppDev1\Class1\IMSBeta\obj\Debug\IMSBeta.g.resources
+C:\AppDev1\Class1\IMSBeta\obj\Debug\IMSBeta.Properties.Resources.resources
+C:\AppDev1\Class1\IMSBeta\obj\Debug\IMSBeta.csproj.GenerateResource.cache
+C:\AppDev1\Class1\IMSBeta\obj\Debug\IMSBeta.csproj.CoreCompileInputs.cache
+C:\AppDev1\Class1\IMSBeta\obj\Debug\IMSBeta.csproj.CopyComplete
+C:\AppDev1\Class1\IMSBeta\obj\Debug\IMSBeta.exe
+C:\AppDev1\Class1\IMSBeta\obj\Debug\IMSBeta.pdb
+C:\AppDev1\Class1\IMSBeta\obj\Debug\window\win_add_edit_customer.g.cs
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\IMSBeta.csproj.AssemblyReference.cache
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\IMSBeta.csproj.SuggestedBindingRedirects.cache
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\theme\ShinyDarkPurple.baml
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_add_edit_customer.g.cs
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_customer.g.cs
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_inventory.g.cs
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_main.g.cs
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_product.g.cs
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_productprice.g.cs
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_users.g.cs
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\win_login.g.cs
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\App.g.cs
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\IMSBeta_MarkupCompile.cache
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\IMSBeta_MarkupCompile.lref
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\IMSBeta.exe
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\IMSBeta.pdb
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\bin\Debug\IMSBeta.exe.config
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\bin\Debug\IMSBeta.exe
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\bin\Debug\IMSBeta.pdb
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\bin\Debug\DataModelLayer.dll
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\bin\Debug\EntityFramework.dll
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\bin\Debug\EntityFramework.SqlServer.dll
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\bin\Debug\DataModelLayer.pdb
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\bin\Debug\DataModelLayer.dll.config
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\bin\Debug\EntityFramework.xml
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\bin\Debug\EntityFramework.SqlServer.xml
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\bin\Debug\Microsoft.Windows.Shell.pdb
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\bin\Debug\Microsoft.Windows.Shell.xml
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\bin\Debug\RibbonControlsLibrary.pdb
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\bin\Debug\RibbonControlsLibrary.xml
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\App.baml
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_add_edit_customer.baml
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_customer.baml
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_inventory.baml
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_main.baml
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_product.baml
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_productprice.baml
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_users.baml
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\win_login.baml
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\IMSBeta.g.resources
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\IMSBeta.Properties.Resources.resources
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\IMSBeta.csproj.GenerateResource.cache
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\IMSBeta.csproj.CoreCompileInputs.cache
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\IMSBeta.csproj.CopyComplete
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_add_edit_user.g.cs
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_add_edit_user.baml
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_add_edit_product.g.cs
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_add_edit_product.baml
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_AddNewPrice.g.cs
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_AddNewPrice.baml
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_AddnewTransaction.g.cs
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_AddnewTransaction.baml
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_SetNewPassword.g.cs
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\IMSBeta\obj\Debug\window\win_SetNewPassword.baml
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\bin\Debug\IMSBeta.exe.config
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\bin\Debug\IMSBeta.exe
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\bin\Debug\IMSBeta.pdb
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\bin\Debug\DataModelLayer.dll
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\bin\Debug\EntityFramework.dll
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\bin\Debug\EntityFramework.SqlServer.dll
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\bin\Debug\DataModelLayer.pdb
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\bin\Debug\DataModelLayer.dll.config
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\bin\Debug\EntityFramework.xml
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\bin\Debug\EntityFramework.SqlServer.xml
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\bin\Debug\Microsoft.Windows.Shell.pdb
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\bin\Debug\Microsoft.Windows.Shell.xml
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\bin\Debug\RibbonControlsLibrary.pdb
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\bin\Debug\RibbonControlsLibrary.xml
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\IMSBeta.csproj.AssemblyReference.cache
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\IMSBeta.csproj.SuggestedBindingRedirects.cache
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\theme\ShinyDarkPurple.baml
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_AddNewPrice.g.cs
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_AddnewTransaction.g.cs
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_add_edit_customer.g.cs
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_add_edit_product.g.cs
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_add_edit_user.g.cs
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_customer.g.cs
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_inventory.g.cs
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_main.g.cs
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_product.g.cs
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_productprice.g.cs
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_SetNewPassword.g.cs
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_users.g.cs
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\win_login.g.cs
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\App.g.cs
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\IMSBeta_MarkupCompile.cache
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\IMSBeta_MarkupCompile.lref
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\App.baml
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_AddNewPrice.baml
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_AddnewTransaction.baml
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_add_edit_customer.baml
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_add_edit_product.baml
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_add_edit_user.baml
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_customer.baml
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_inventory.baml
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_main.baml
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_product.baml
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_productprice.baml
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_SetNewPassword.baml
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\window\win_users.baml
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\win_login.baml
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\IMSBeta.g.resources
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\IMSBeta.Properties.Resources.resources
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\IMSBeta.csproj.GenerateResource.cache
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\IMSBeta.csproj.CoreCompileInputs.cache
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\IMSBeta.csproj.CopyComplete
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\IMSBeta.exe
+F:\john abbott\Application Development I\Project\2022-10-19 before final\IMSBeta\obj\Debug\IMSBeta.pdb

@@ -1,0 +1,823 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="inventorydbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CustomerTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerAddress" Type="nvarchar(max)" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="CustomerActive" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="Inventory">
+          <Key>
+            <PropertyRef Name="InventoryID" />
+          </Key>
+          <Property Name="InventoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InventoryCount" Type="int" Nullable="false" />
+          <Property Name="InventoryDesc" Type="text" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProductDescription" Type="nvarchar(max)" />
+          <Property Name="ProductLastFee" Type="bigint" Nullable="false" />
+          <Property Name="ProductLastSupply" Type="int" Nullable="false" />
+          <Property Name="ProductImage" Type="image" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ProductActive" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="ProductPrice">
+          <Key>
+            <PropertyRef Name="ProductPriceId" />
+          </Key>
+          <Property Name="ProductPriceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductPricePurch" Type="bigint" Nullable="false" />
+          <Property Name="ProductPriceSell" Type="bigint" Nullable="false" />
+          <Property Name="ProductPriceDesc" Type="text" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserFamily" Type="nvarchar" MaxLength="100" />
+          <Property Name="UserTel" Type="nvarchar" MaxLength="11" />
+          <Property Name="UserUserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserPassword" Type="nvarchar" MaxLength="128" />
+          <Property Name="UserAge" Type="tinyint" />
+          <Property Name="UserGender" Type="tinyint" />
+          <Property Name="UserActive" Type="tinyint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'inventorydb.dbo.Vw_Customer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vw_Customer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+            <PropertyRef Name="CustomerName" />
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserFamily" Type="nvarchar" MaxLength="100" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CustomerTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerAddress" Type="nvarchar(max)" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="151" />
+          <Property Name="CustomerActive" Type="tinyint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'inventorydb.dbo.Vw_Inventory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vw_Inventory">
+          <Key>
+            <PropertyRef Name="InventoryID" />
+            <PropertyRef Name="InventoryCount" />
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="ProductName" />
+          </Key>
+          <Property Name="InventoryID" Type="int" Nullable="false" />
+          <Property Name="InventoryCount" Type="int" Nullable="false" />
+          <Property Name="InventoryDesc" Type="text" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserFamily" Type="nvarchar" MaxLength="100" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="151" />
+          <Property Name="status" Type="varchar" MaxLength="18" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'inventorydb.dbo.Vw_Product' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vw_Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="ProductName" />
+            <PropertyRef Name="ProductLastFee" />
+            <PropertyRef Name="ProductLastSupply" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProductDescription" Type="nvarchar(max)" />
+          <Property Name="ProductLastFee" Type="bigint" Nullable="false" />
+          <Property Name="ProductLastSupply" Type="int" Nullable="false" />
+          <Property Name="ProductImage" Type="image" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="UserFamily" Type="nvarchar" MaxLength="100" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="151" />
+          <Property Name="ProductActive" Type="tinyint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'inventorydb.dbo.Vw_ProductPrice' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vw_ProductPrice">
+          <Key>
+            <PropertyRef Name="ProductPriceId" />
+            <PropertyRef Name="ProductPricePurch" />
+            <PropertyRef Name="ProductPriceSell" />
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="ProductName" />
+          </Key>
+          <Property Name="ProductPriceId" Type="int" Nullable="false" />
+          <Property Name="ProductPricePurch" Type="bigint" Nullable="false" />
+          <Property Name="ProductPriceSell" Type="bigint" Nullable="false" />
+          <Property Name="ProductPriceDesc" Type="text" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserFamily" Type="nvarchar" MaxLength="100" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="151" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'inventorydb.dbo.Vw_Users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vw_Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserFamily" Type="nvarchar" MaxLength="100" />
+          <Property Name="UserTel" Type="nvarchar" MaxLength="11" />
+          <Property Name="UserUserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserAge" Type="tinyint" />
+          <Property Name="UserPassword" Type="nvarchar" MaxLength="128" />
+          <Property Name="UserGender" Type="tinyint" />
+          <Property Name="UserActive" Type="tinyint" />
+          <Property Name="UserGenderShow" Type="varchar" MaxLength="6" />
+          <Property Name="UserActiveShow" Type="varchar" MaxLength="8" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'inventorydb.sys.database_firewall_rules' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="start_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="end_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="create_date" Type="datetime" Nullable="false" />
+          <Property Name="modify_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Customer_UserId">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Inventory_UserID">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Inventory">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_UserId">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductPriceId_UserID">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="ProductPrice" Type="Self.ProductPrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ProductPrice">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="Sp_ins_product" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProductName" Type="varchar" Mode="In" />
+          <Parameter Name="ProductDesc" Type="text" Mode="In" />
+          <Parameter Name="ProductImage" Type="image" Mode="In" />
+          <Parameter Name="UserId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Sp_Update_Product" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProductId" Type="int" Mode="In" />
+          <Parameter Name="ProductName" Type="varchar" Mode="In" />
+          <Parameter Name="ProductDesc" Type="varchar" Mode="In" />
+          <Parameter Name="ProductImage" Type="image" Mode="In" />
+        </Function>
+        <Function Name="Sp_Update_ProductLastStock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="InventoryCount" Type="int" Mode="In" />
+          <Parameter Name="ProductId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Sp_UpdateFee_Product" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProductId" Type="int" Mode="In" />
+          <Parameter Name="ProductLastFee" Type="bigint" Mode="In" />
+        </Function>
+        <EntityContainer Name="inventorydbModelStoreContainer">
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductPrice" EntityType="Self.ProductPrice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vw_Customer" EntityType="Self.Vw_Customer" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vw_Customer].[UserName] AS [UserName], 
+    [Vw_Customer].[UserFamily] AS [UserFamily], 
+    [Vw_Customer].[CustomerID] AS [CustomerID], 
+    [Vw_Customer].[CustomerName] AS [CustomerName], 
+    [Vw_Customer].[CustomerTel] AS [CustomerTel], 
+    [Vw_Customer].[CustomerAddress] AS [CustomerAddress], 
+    [Vw_Customer].[UserID] AS [UserID], 
+    [Vw_Customer].[FullName] AS [FullName], 
+    [Vw_Customer].[CustomerActive] AS [CustomerActive]
+    FROM [dbo].[Vw_Customer] AS [Vw_Customer]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Vw_Inventory" EntityType="Self.Vw_Inventory" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vw_Inventory].[InventoryID] AS [InventoryID], 
+    [Vw_Inventory].[InventoryCount] AS [InventoryCount], 
+    [Vw_Inventory].[InventoryDesc] AS [InventoryDesc], 
+    [Vw_Inventory].[UserID] AS [UserID], 
+    [Vw_Inventory].[ProductId] AS [ProductId], 
+    [Vw_Inventory].[ProductName] AS [ProductName], 
+    [Vw_Inventory].[UserName] AS [UserName], 
+    [Vw_Inventory].[UserFamily] AS [UserFamily], 
+    [Vw_Inventory].[FullName] AS [FullName], 
+    [Vw_Inventory].[status] AS [status]
+    FROM [dbo].[Vw_Inventory] AS [Vw_Inventory]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Vw_Product" EntityType="Self.Vw_Product" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vw_Product].[ProductId] AS [ProductId], 
+    [Vw_Product].[ProductName] AS [ProductName], 
+    [Vw_Product].[ProductDescription] AS [ProductDescription], 
+    [Vw_Product].[ProductLastFee] AS [ProductLastFee], 
+    [Vw_Product].[ProductLastSupply] AS [ProductLastSupply], 
+    [Vw_Product].[ProductImage] AS [ProductImage], 
+    [Vw_Product].[UserId] AS [UserId], 
+    [Vw_Product].[UserFamily] AS [UserFamily], 
+    [Vw_Product].[UserName] AS [UserName], 
+    [Vw_Product].[FullName] AS [FullName], 
+    [Vw_Product].[ProductActive] AS [ProductActive]
+    FROM [dbo].[Vw_Product] AS [Vw_Product]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Vw_ProductPrice" EntityType="Self.Vw_ProductPrice" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vw_ProductPrice].[ProductPriceId] AS [ProductPriceId], 
+    [Vw_ProductPrice].[ProductPricePurch] AS [ProductPricePurch], 
+    [Vw_ProductPrice].[ProductPriceSell] AS [ProductPriceSell], 
+    [Vw_ProductPrice].[ProductPriceDesc] AS [ProductPriceDesc], 
+    [Vw_ProductPrice].[ProductId] AS [ProductId], 
+    [Vw_ProductPrice].[UserId] AS [UserId], 
+    [Vw_ProductPrice].[ProductName] AS [ProductName], 
+    [Vw_ProductPrice].[UserName] AS [UserName], 
+    [Vw_ProductPrice].[UserFamily] AS [UserFamily], 
+    [Vw_ProductPrice].[FullName] AS [FullName]
+    FROM [dbo].[Vw_ProductPrice] AS [Vw_ProductPrice]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Vw_Users" EntityType="Self.Vw_Users" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vw_Users].[UserID] AS [UserID], 
+    [Vw_Users].[UserName] AS [UserName], 
+    [Vw_Users].[UserFamily] AS [UserFamily], 
+    [Vw_Users].[UserTel] AS [UserTel], 
+    [Vw_Users].[UserUserName] AS [UserUserName], 
+    [Vw_Users].[UserAge] AS [UserAge], 
+    [Vw_Users].[UserPassword] AS [UserPassword], 
+    [Vw_Users].[UserGender] AS [UserGender], 
+    [Vw_Users].[UserActive] AS [UserActive], 
+    [Vw_Users].[UserGenderShow] AS [UserGenderShow], 
+    [Vw_Users].[UserActiveShow] AS [UserActiveShow]
+    FROM [dbo].[Vw_Users] AS [Vw_Users]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" store:Type="Views" store:Schema="sys">
+            <DefiningQuery>SELECT 
+    [database_firewall_rules].[id] AS [id], 
+    [database_firewall_rules].[name] AS [name], 
+    [database_firewall_rules].[start_ip_address] AS [start_ip_address], 
+    [database_firewall_rules].[end_ip_address] AS [end_ip_address], 
+    [database_firewall_rules].[create_date] AS [create_date], 
+    [database_firewall_rules].[modify_date] AS [modify_date]
+    FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Customer_UserId" Association="Self.FK_Customer_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Inventory_UserID" Association="Self.FK_Inventory_UserID">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Inventory" EntitySet="Inventory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_UserId" Association="Self.FK_Product_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductPriceId_UserID" Association="Self.FK_ProductPriceId_UserID">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ProductPrice" EntitySet="ProductPrice" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="inventorydbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CustomerTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Customer_UserId" FromRole="Customer" ToRole="Users" />
+          <Property Name="CustomerActive" Type="Byte" />
+        </EntityType>
+        <EntityType Name="Inventory">
+          <Key>
+            <PropertyRef Name="InventoryID" />
+          </Key>
+          <Property Name="InventoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InventoryCount" Type="Int32" Nullable="false" />
+          <Property Name="InventoryDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Inventory_UserID" FromRole="Inventory" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductLastFee" Type="Int64" Nullable="false" />
+          <Property Name="ProductLastSupply" Type="Int32" Nullable="false" />
+          <Property Name="ProductImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Product_UserId" FromRole="Product" ToRole="Users" />
+          <Property Name="ProductActive" Type="Byte" />
+        </EntityType>
+        <EntityType Name="ProductPrice">
+          <Key>
+            <PropertyRef Name="ProductPriceId" />
+          </Key>
+          <Property Name="ProductPriceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductPricePurch" Type="Int64" Nullable="false" />
+          <Property Name="ProductPriceSell" Type="Int64" Nullable="false" />
+          <Property Name="ProductPriceDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_ProductPriceId_UserID" FromRole="ProductPrice" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserFamily" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UserTel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="UserUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserPassword" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="UserAge" Type="Byte" />
+          <Property Name="UserGender" Type="Byte" />
+          <Property Name="UserActive" Type="Byte" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK_Customer_UserId" FromRole="Users" ToRole="Customer" />
+          <NavigationProperty Name="Inventories" Relationship="Self.FK_Inventory_UserID" FromRole="Users" ToRole="Inventory" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Product_UserId" FromRole="Users" ToRole="Product" />
+          <NavigationProperty Name="ProductPrices" Relationship="Self.FK_ProductPriceId_UserID" FromRole="Users" ToRole="ProductPrice" />
+        </EntityType>
+        <EntityType Name="Vw_Customer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+            <PropertyRef Name="CustomerName" />
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserFamily" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CustomerTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="FullName" Type="String" MaxLength="151" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerActive" Type="Byte" />
+        </EntityType>
+        <EntityType Name="Vw_Inventory">
+          <Key>
+            <PropertyRef Name="InventoryID" />
+            <PropertyRef Name="InventoryCount" />
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="ProductName" />
+          </Key>
+          <Property Name="InventoryID" Type="Int32" Nullable="false" />
+          <Property Name="InventoryCount" Type="Int32" Nullable="false" />
+          <Property Name="InventoryDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserFamily" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" MaxLength="151" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Vw_Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="ProductName" />
+            <PropertyRef Name="ProductLastFee" />
+            <PropertyRef Name="ProductLastSupply" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductLastFee" Type="Int64" Nullable="false" />
+          <Property Name="ProductLastSupply" Type="Int32" Nullable="false" />
+          <Property Name="ProductImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="UserFamily" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" MaxLength="151" FixedLength="false" Unicode="true" />
+          <Property Name="ProductActive" Type="Byte" />
+        </EntityType>
+        <EntityType Name="Vw_ProductPrice">
+          <Key>
+            <PropertyRef Name="ProductPriceId" />
+            <PropertyRef Name="ProductPricePurch" />
+            <PropertyRef Name="ProductPriceSell" />
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="ProductName" />
+          </Key>
+          <Property Name="ProductPriceId" Type="Int32" Nullable="false" />
+          <Property Name="ProductPricePurch" Type="Int64" Nullable="false" />
+          <Property Name="ProductPriceSell" Type="Int64" Nullable="false" />
+          <Property Name="ProductPriceDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserFamily" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" MaxLength="151" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Vw_Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserFamily" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UserTel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="UserUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserAge" Type="Byte" />
+          <Property Name="UserPassword" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="UserGender" Type="Byte" />
+          <Property Name="UserActive" Type="Byte" />
+          <Property Name="UserGenderShow" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="UserActiveShow" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <Association Name="FK_Customer_UserId">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Inventory_UserID">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Inventory">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_UserId">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductPriceId_UserID">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="ProductPrice" Type="Self.ProductPrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ProductPrice">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="inventorydbEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Inventories" EntityType="Self.Inventory" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="ProductPrices" EntityType="Self.ProductPrice" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Vw_Customer" EntityType="Self.Vw_Customer" />
+          <EntitySet Name="Vw_Inventory" EntityType="Self.Vw_Inventory" />
+          <EntitySet Name="Vw_Product" EntityType="Self.Vw_Product" />
+          <EntitySet Name="Vw_ProductPrice" EntityType="Self.Vw_ProductPrice" />
+          <EntitySet Name="Vw_Users" EntityType="Self.Vw_Users" />
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
+          <AssociationSet Name="FK_Customer_UserId" Association="Self.FK_Customer_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Inventory_UserID" Association="Self.FK_Inventory_UserID">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Inventory" EntitySet="Inventories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_UserId" Association="Self.FK_Product_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductPriceId_UserID" Association="Self.FK_ProductPriceId_UserID">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ProductPrice" EntitySet="ProductPrices" />
+          </AssociationSet>
+          <FunctionImport Name="Sp_ins_product">
+            <Parameter Name="ProductName" Mode="In" Type="String" />
+            <Parameter Name="ProductDesc" Mode="In" Type="String" />
+            <Parameter Name="ProductImage" Mode="In" Type="Binary" />
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_UpdateFee_Product">
+            <Parameter Name="ProductId" Mode="In" Type="Int32" />
+            <Parameter Name="ProductLastFee" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_ProductLastStock">
+            <Parameter Name="InventoryCount" Mode="In" Type="Int32" />
+            <Parameter Name="ProductId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_Product">
+            <Parameter Name="ProductId" Mode="In" Type="Int32" />
+            <Parameter Name="ProductName" Mode="In" Type="String" />
+            <Parameter Name="ProductDesc" Mode="In" Type="String" />
+            <Parameter Name="ProductImage" Mode="In" Type="Binary" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="inventorydbModelStoreContainer" CdmEntityContainer="inventorydbEntities1">
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="inventorydbModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="CustomerActive" ColumnName="CustomerActive" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="CustomerTel" ColumnName="CustomerTel" />
+                <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Inventories">
+            <EntityTypeMapping TypeName="inventorydbModel.Inventory">
+              <MappingFragment StoreEntitySet="Inventory">
+                <ScalarProperty Name="InventoryID" ColumnName="InventoryID" />
+                <ScalarProperty Name="InventoryCount" ColumnName="InventoryCount" />
+                <ScalarProperty Name="InventoryDesc" ColumnName="InventoryDesc" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="inventorydbModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ProductActive" ColumnName="ProductActive" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+                <ScalarProperty Name="ProductLastFee" ColumnName="ProductLastFee" />
+                <ScalarProperty Name="ProductLastSupply" ColumnName="ProductLastSupply" />
+                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductPrices">
+            <EntityTypeMapping TypeName="inventorydbModel.ProductPrice">
+              <MappingFragment StoreEntitySet="ProductPrice">
+                <ScalarProperty Name="ProductPriceId" ColumnName="ProductPriceId" />
+                <ScalarProperty Name="ProductPricePurch" ColumnName="ProductPricePurch" />
+                <ScalarProperty Name="ProductPriceSell" ColumnName="ProductPriceSell" />
+                <ScalarProperty Name="ProductPriceDesc" ColumnName="ProductPriceDesc" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="inventorydbModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserFamily" ColumnName="UserFamily" />
+                <ScalarProperty Name="UserTel" ColumnName="UserTel" />
+                <ScalarProperty Name="UserUserName" ColumnName="UserUserName" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="UserAge" ColumnName="UserAge" />
+                <ScalarProperty Name="UserGender" ColumnName="UserGender" />
+                <ScalarProperty Name="UserActive" ColumnName="UserActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vw_Customer">
+            <EntityTypeMapping TypeName="inventorydbModel.Vw_Customer">
+              <MappingFragment StoreEntitySet="Vw_Customer">
+                <ScalarProperty Name="CustomerActive" ColumnName="CustomerActive" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserFamily" ColumnName="UserFamily" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="CustomerTel" ColumnName="CustomerTel" />
+                <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vw_Inventory">
+            <EntityTypeMapping TypeName="inventorydbModel.Vw_Inventory">
+              <MappingFragment StoreEntitySet="Vw_Inventory">
+                <ScalarProperty Name="InventoryID" ColumnName="InventoryID" />
+                <ScalarProperty Name="InventoryCount" ColumnName="InventoryCount" />
+                <ScalarProperty Name="InventoryDesc" ColumnName="InventoryDesc" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserFamily" ColumnName="UserFamily" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vw_Product">
+            <EntityTypeMapping TypeName="inventorydbModel.Vw_Product">
+              <MappingFragment StoreEntitySet="Vw_Product">
+                <ScalarProperty Name="ProductActive" ColumnName="ProductActive" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+                <ScalarProperty Name="ProductLastFee" ColumnName="ProductLastFee" />
+                <ScalarProperty Name="ProductLastSupply" ColumnName="ProductLastSupply" />
+                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserFamily" ColumnName="UserFamily" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vw_ProductPrice">
+            <EntityTypeMapping TypeName="inventorydbModel.Vw_ProductPrice">
+              <MappingFragment StoreEntitySet="Vw_ProductPrice">
+                <ScalarProperty Name="ProductPriceId" ColumnName="ProductPriceId" />
+                <ScalarProperty Name="ProductPricePurch" ColumnName="ProductPricePurch" />
+                <ScalarProperty Name="ProductPriceSell" ColumnName="ProductPriceSell" />
+                <ScalarProperty Name="ProductPriceDesc" ColumnName="ProductPriceDesc" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserFamily" ColumnName="UserFamily" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vw_Users">
+            <EntityTypeMapping TypeName="inventorydbModel.Vw_Users">
+              <MappingFragment StoreEntitySet="Vw_Users">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserFamily" ColumnName="UserFamily" />
+                <ScalarProperty Name="UserTel" ColumnName="UserTel" />
+                <ScalarProperty Name="UserUserName" ColumnName="UserUserName" />
+                <ScalarProperty Name="UserAge" ColumnName="UserAge" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="UserGender" ColumnName="UserGender" />
+                <ScalarProperty Name="UserActive" ColumnName="UserActive" />
+                <ScalarProperty Name="UserGenderShow" ColumnName="UserGenderShow" />
+                <ScalarProperty Name="UserActiveShow" ColumnName="UserActiveShow" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="database_firewall_rules">
+            <EntityTypeMapping TypeName="inventorydbModel.database_firewall_rules">
+              <MappingFragment StoreEntitySet="database_firewall_rules">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+                <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Sp_ins_product" FunctionName="inventorydbModel.Store.Sp_ins_product" />
+          <FunctionImportMapping FunctionImportName="Sp_UpdateFee_Product" FunctionName="inventorydbModel.Store.Sp_UpdateFee_Product" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_ProductLastStock" FunctionName="inventorydbModel.Store.Sp_Update_ProductLastStock" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_Product" FunctionName="inventorydbModel.Store.Sp_Update_Product" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="inventorydbModelStoreContainer" CdmEntityContainer="inventorydbEntities1">
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="inventorydbModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="CustomerActive" ColumnName="CustomerActive" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerTel" ColumnName="CustomerTel" />
+          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventories">
+      <EntityTypeMapping TypeName="inventorydbModel.Inventory">
+        <MappingFragment StoreEntitySet="Inventory">
+          <ScalarProperty Name="InventoryID" ColumnName="InventoryID" />
+          <ScalarProperty Name="InventoryCount" ColumnName="InventoryCount" />
+          <ScalarProperty Name="InventoryDesc" ColumnName="InventoryDesc" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="inventorydbModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="ProductActive" ColumnName="ProductActive" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+          <ScalarProperty Name="ProductLastFee" ColumnName="ProductLastFee" />
+          <ScalarProperty Name="ProductLastSupply" ColumnName="ProductLastSupply" />
+          <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductPrices">
+      <EntityTypeMapping TypeName="inventorydbModel.ProductPrice">
+        <MappingFragment StoreEntitySet="ProductPrice">
+          <ScalarProperty Name="ProductPriceId" ColumnName="ProductPriceId" />
+          <ScalarProperty Name="ProductPricePurch" ColumnName="ProductPricePurch" />
+          <ScalarProperty Name="ProductPriceSell" ColumnName="ProductPriceSell" />
+          <ScalarProperty Name="ProductPriceDesc" ColumnName="ProductPriceDesc" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="inventorydbModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserFamily" ColumnName="UserFamily" />
+          <ScalarProperty Name="UserTel" ColumnName="UserTel" />
+          <ScalarProperty Name="UserUserName" ColumnName="UserUserName" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+          <ScalarProperty Name="UserAge" ColumnName="UserAge" />
+          <ScalarProperty Name="UserGender" ColumnName="UserGender" />
+          <ScalarProperty Name="UserActive" ColumnName="UserActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_Customer">
+      <EntityTypeMapping TypeName="inventorydbModel.Vw_Customer">
+        <MappingFragment StoreEntitySet="Vw_Customer">
+          <ScalarProperty Name="CustomerActive" ColumnName="CustomerActive" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserFamily" ColumnName="UserFamily" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerTel" ColumnName="CustomerTel" />
+          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_Inventory">
+      <EntityTypeMapping TypeName="inventorydbModel.Vw_Inventory">
+        <MappingFragment StoreEntitySet="Vw_Inventory">
+          <ScalarProperty Name="InventoryID" ColumnName="InventoryID" />
+          <ScalarProperty Name="InventoryCount" ColumnName="InventoryCount" />
+          <ScalarProperty Name="InventoryDesc" ColumnName="InventoryDesc" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserFamily" ColumnName="UserFamily" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_Product">
+      <EntityTypeMapping TypeName="inventorydbModel.Vw_Product">
+        <MappingFragment StoreEntitySet="Vw_Product">
+          <ScalarProperty Name="ProductActive" ColumnName="ProductActive" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+          <ScalarProperty Name="ProductLastFee" ColumnName="ProductLastFee" />
+          <ScalarProperty Name="ProductLastSupply" ColumnName="ProductLastSupply" />
+          <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserFamily" ColumnName="UserFamily" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_ProductPrice">
+      <EntityTypeMapping TypeName="inventorydbModel.Vw_ProductPrice">
+        <MappingFragment StoreEntitySet="Vw_ProductPrice">
+          <ScalarProperty Name="ProductPriceId" ColumnName="ProductPriceId" />
+          <ScalarProperty Name="ProductPricePurch" ColumnName="ProductPricePurch" />
+          <ScalarProperty Name="ProductPriceSell" ColumnName="ProductPriceSell" />
+          <ScalarProperty Name="ProductPriceDesc" ColumnName="ProductPriceDesc" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserFamily" ColumnName="UserFamily" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_Users">
+      <EntityTypeMapping TypeName="inventorydbModel.Vw_Users">
+        <MappingFragment StoreEntitySet="Vw_Users">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserFamily" ColumnName="UserFamily" />
+          <ScalarProperty Name="UserTel" ColumnName="UserTel" />
+          <ScalarProperty Name="UserUserName" ColumnName="UserUserName" />
+          <ScalarProperty Name="UserAge" ColumnName="UserAge" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+          <ScalarProperty Name="UserGender" ColumnName="UserGender" />
+          <ScalarProperty Name="UserActive" ColumnName="UserActive" />
+          <ScalarProperty Name="UserGenderShow" ColumnName="UserGenderShow" />
+          <ScalarProperty Name="UserActiveShow" ColumnName="UserActiveShow" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="database_firewall_rules">
+      <EntityTypeMapping TypeName="inventorydbModel.database_firewall_rules">
+        <MappingFragment StoreEntitySet="database_firewall_rules">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+          <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Sp_ins_product" FunctionName="inventorydbModel.Store.Sp_ins_product" />
+    <FunctionImportMapping FunctionImportName="Sp_UpdateFee_Product" FunctionName="inventorydbModel.Store.Sp_UpdateFee_Product" />
+    <FunctionImportMapping FunctionImportName="Sp_Update_ProductLastStock" FunctionName="inventorydbModel.Store.Sp_Update_ProductLastStock" />
+    <FunctionImportMapping FunctionImportName="Sp_Update_Product" FunctionName="inventorydbModel.Store.Sp_Update_Product" />
+  </EntityContainerMapping>
+</Mapping>

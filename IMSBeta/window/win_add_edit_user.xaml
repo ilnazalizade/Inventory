@@ -1,0 +1,140 @@
+﻿<Window x:Class="IMSBeta.window.win_add_edit_user"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IMSBeta.window"
+        mc:Ignorable="d"
+         Title="win_add_edit_user" Height="550" Width="500" Background="Transparent" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <Rectangle Fill="#FFF0F4F9" HorizontalAlignment="Left" Height="530" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="480" RadiusX="10" RadiusY="10">
+            <Rectangle.Effect>
+                <DropShadowEffect/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="85" Margin="10,10,0,0" RadiusY="10" RadiusX="10" Stroke="#FF04114B" VerticalAlignment="Top" Width="480">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF5479DA"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+            <Rectangle.Effect>
+                <DropShadowEffect/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Image x:Name="image_close"  Height="18" Margin="454,22,28,0" VerticalAlignment="Top" Width="18" Source="/img/exit.png" Opacity="0.7" Cursor="Hand" MouseDown="image_close_MouseDown">
+            <Image.Effect>
+                <DropShadowEffect/>
+            </Image.Effect>
+        </Image>
+        <Label x:Name="label" Content="User Add and Edit form" Margin="85,32,180,0" VerticalAlignment="Top" Foreground="Black" FontSize="18" FontWeight="Bold"/>
+        <Image x:Name="image1"  Height="64" Margin="21,20,420,0" VerticalAlignment="Top" Width="59" Source="/img/user_group.png" Stretch="Fill">
+            <Image.Effect>
+                <DropShadowEffect/>
+            </Image.Effect>
+        </Image>
+        <TextBox x:Name="txt_name"  Height="22" Margin="130,130,250,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"  TabIndex="0"  FontSize="13.333" Foreground="#FFE60E2C">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <TextBox x:Name="txt_userfamily"  Height="23" Margin="130,178,250,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"  TabIndex="1" FontSize="13.333" Foreground="#FFE60E2C">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <TextBox x:Name="txt_usertel"  Height="23" Margin="130,222,250,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" MaxLength="10" PreviewTextInput="txt_usertel_PreviewTextInput"  TabIndex="2" FontSize="13.333" Foreground="#FFE60E2C">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <TextBox x:Name="txt_userage"  Height="23" Margin="130,265,250,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" MaxLength="2" PreviewTextInput="txt_userage_PreviewTextInput" TabIndex="3"  FontSize="13.333" Foreground="#FFE60E2C" >
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <TextBox x:Name="txt_username"  Height="23" Margin="352,134,28,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"  TabIndex="4"  FontSize="13.333" Foreground="#FFE60E2C">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <Label x:Name="label1" Content="Name :"  Margin="53,130,344,0" VerticalAlignment="Top"  Foreground="#FF261593"  FontSize="14.667"/>
+        <Label x:Name="label2" Content="LastName :"  Margin="25,175,372,0" VerticalAlignment="Top"  Foreground="#FF261593" FontSize="14.667"/>
+        <Label x:Name="label3" Content="Phone :"  Margin="50,220,346,0" VerticalAlignment="Top"  RenderTransformOrigin="1.314,1.423" Foreground="#FF261593" FontFamily="B Yekan" FontSize="14.667"/>
+        <Label x:Name="label4" Content="Age :"  Margin="64,0,337,0" VerticalAlignment="Center"  Foreground="#FF261593" FontSize="14.667"/>
+        <Label x:Name="label5" Content="Username :"  Margin="270,131,111,0" VerticalAlignment="Top"  Foreground="#FF261593" FontSize="14.667"/>
+        <Label x:Name="label6" Content="Password :"  Margin="273,180,139,0" VerticalAlignment="Top"  Foreground="#FF261593"  FontSize="14.667"/>
+        <PasswordBox x:Name="txt_pass"  Margin="352,186,28,0" VerticalAlignment="Top" Width="120" Height="22" TabIndex="5"  FontSize="13.333" Foreground="#FFE60E2C">
+            <PasswordBox.Effect>
+                <DropShadowEffect/>
+            </PasswordBox.Effect>
+        </PasswordBox>
+        <Button x:Name="btn_ok" Content="Submit"  Margin="105,455,277,58" Width="118" Height="37"  FontSize="14.667" Foreground="#FF0A1FA8" Cursor="Hand" TabIndex="6" Click="btn_ok_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF6C8EC9" Offset="0"/>
+                    <GradientStop Color="#FF224258" Offset="1"/>
+                    <GradientStop Color="#FFDAEBF3" Offset="0.783"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btn_exit" Content="Exit"  Margin="294,456,88,0" VerticalAlignment="Top" Width="118" Height="36"  FontSize="14.667" Foreground="#FF0A1FA8" Cursor="Hand" Click="btn_exit_Click" TabIndex="7">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF6C8EC9" Offset="0"/>
+                    <GradientStop Color="#FF224258" Offset="1"/>
+                    <GradientStop Color="#FFDAEBF3" Offset="0.783"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Image x:Name="image3" HorizontalAlignment="Left" Height="100" Margin="190,306,0,0" VerticalAlignment="Top" Width="100" Source="/img/mottakere.png">
+            <Image.Effect>
+                <DropShadowEffect/>
+            </Image.Effect>
+        </Image>
+        <Rectangle HorizontalAlignment="Left" Height="5" Margin="105,406,0,0" RadiusY="10" RadiusX="10" Stroke="#FFA1A1A4" VerticalAlignment="Top" Width="290">
+            <Rectangle.Effect>
+                <DropShadowEffect/>
+            </Rectangle.Effect>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF5479DA"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <RadioButton x:Name="rdb_man" Content="Mr"  Margin="332,238,103,0" VerticalAlignment="Top" IsChecked="True"  FontSize="14.667" Foreground="#FF123AC1" Height="19">
+
+        </RadioButton>
+        <RadioButton x:Name="rdb_woman" Content="Mrs" HorizontalAlignment="Left" Margin="402,239,0,0" VerticalAlignment="Top" FontFamily="B Yekan" FontSize="14.667" Foreground="#FF123AC1" Height="17" Width="61" RenderTransformOrigin="0.743,0.527">
+
+        </RadioButton>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,24 @@
+C:\AppDev1\Class1\DataModelLayer\bin\Debug\DataModelLayer.dll.config
+C:\AppDev1\Class1\DataModelLayer\bin\Debug\DataModelLayer.dll
+C:\AppDev1\Class1\DataModelLayer\bin\Debug\DataModelLayer.pdb
+C:\AppDev1\Class1\DataModelLayer\bin\Debug\EntityFramework.dll
+C:\AppDev1\Class1\DataModelLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\AppDev1\Class1\DataModelLayer\bin\Debug\EntityFramework.xml
+C:\AppDev1\Class1\DataModelLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\AppDev1\Class1\DataModelLayer\obj\Debug\DataModelLayer.csproj.AssemblyReference.cache
+C:\AppDev1\Class1\DataModelLayer\obj\Debug\DataModelLayer.csproj.CoreCompileInputs.cache
+C:\AppDev1\Class1\DataModelLayer\obj\Debug\DataModelLayer.csproj.CopyComplete
+C:\AppDev1\Class1\DataModelLayer\obj\Debug\DataModelLayer.dll
+C:\AppDev1\Class1\DataModelLayer\obj\Debug\DataModelLayer.pdb
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\DataModelLayer\bin\Debug\DataModelLayer.dll.config
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\DataModelLayer\bin\Debug\DataModelLayer.dll
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\DataModelLayer\bin\Debug\DataModelLayer.pdb
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\DataModelLayer\bin\Debug\EntityFramework.dll
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\DataModelLayer\bin\Debug\EntityFramework.SqlServer.dll
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\DataModelLayer\bin\Debug\EntityFramework.xml
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\DataModelLayer\bin\Debug\EntityFramework.SqlServer.xml
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\DataModelLayer\obj\Debug\DataModelLayer.csproj.AssemblyReference.cache
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\DataModelLayer\obj\Debug\DataModelLayer.csproj.CoreCompileInputs.cache
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\DataModelLayer\obj\Debug\DataModelLayer.csproj.CopyComplete
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\DataModelLayer\obj\Debug\DataModelLayer.dll
+F:\john abbott\Application Development I\Project\2022-10-17Amir11pm\DataModelLayer\obj\Debug\DataModelLayer.pdb

@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="inventorydbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CustomerTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Customer_UserId" FromRole="Customer" ToRole="Users" />
+    <Property Name="CustomerActive" Type="Byte" />
+  </EntityType>
+  <EntityType Name="Inventory">
+    <Key>
+      <PropertyRef Name="InventoryID" />
+    </Key>
+    <Property Name="InventoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InventoryCount" Type="Int32" Nullable="false" />
+    <Property Name="InventoryDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Inventory_UserID" FromRole="Inventory" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductLastFee" Type="Int64" Nullable="false" />
+    <Property Name="ProductLastSupply" Type="Int32" Nullable="false" />
+    <Property Name="ProductImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Product_UserId" FromRole="Product" ToRole="Users" />
+    <Property Name="ProductActive" Type="Byte" />
+  </EntityType>
+  <EntityType Name="ProductPrice">
+    <Key>
+      <PropertyRef Name="ProductPriceId" />
+    </Key>
+    <Property Name="ProductPriceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductPricePurch" Type="Int64" Nullable="false" />
+    <Property Name="ProductPriceSell" Type="Int64" Nullable="false" />
+    <Property Name="ProductPriceDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_ProductPriceId_UserID" FromRole="ProductPrice" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserFamily" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UserTel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="UserUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserPassword" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="UserAge" Type="Byte" />
+    <Property Name="UserGender" Type="Byte" />
+    <Property Name="UserActive" Type="Byte" />
+    <NavigationProperty Name="Customers" Relationship="Self.FK_Customer_UserId" FromRole="Users" ToRole="Customer" />
+    <NavigationProperty Name="Inventories" Relationship="Self.FK_Inventory_UserID" FromRole="Users" ToRole="Inventory" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_Product_UserId" FromRole="Users" ToRole="Product" />
+    <NavigationProperty Name="ProductPrices" Relationship="Self.FK_ProductPriceId_UserID" FromRole="Users" ToRole="ProductPrice" />
+  </EntityType>
+  <EntityType Name="Vw_Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="CustomerName" />
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserFamily" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CustomerTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="151" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerActive" Type="Byte" />
+  </EntityType>
+  <EntityType Name="Vw_Inventory">
+    <Key>
+      <PropertyRef Name="InventoryID" />
+      <PropertyRef Name="InventoryCount" />
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="ProductName" />
+    </Key>
+    <Property Name="InventoryID" Type="Int32" Nullable="false" />
+    <Property Name="InventoryCount" Type="Int32" Nullable="false" />
+    <Property Name="InventoryDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserFamily" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FullName" Type="String" MaxLength="151" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="ProductName" />
+      <PropertyRef Name="ProductLastFee" />
+      <PropertyRef Name="ProductLastSupply" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductLastFee" Type="Int64" Nullable="false" />
+    <Property Name="ProductLastSupply" Type="Int32" Nullable="false" />
+    <Property Name="ProductImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="UserFamily" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FullName" Type="String" MaxLength="151" FixedLength="false" Unicode="true" />
+    <Property Name="ProductActive" Type="Byte" />
+  </EntityType>
+  <EntityType Name="Vw_ProductPrice">
+    <Key>
+      <PropertyRef Name="ProductPriceId" />
+      <PropertyRef Name="ProductPricePurch" />
+      <PropertyRef Name="ProductPriceSell" />
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="ProductName" />
+    </Key>
+    <Property Name="ProductPriceId" Type="Int32" Nullable="false" />
+    <Property Name="ProductPricePurch" Type="Int64" Nullable="false" />
+    <Property Name="ProductPriceSell" Type="Int64" Nullable="false" />
+    <Property Name="ProductPriceDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserFamily" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FullName" Type="String" MaxLength="151" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Vw_Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserFamily" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UserTel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="UserUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserAge" Type="Byte" />
+    <Property Name="UserPassword" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="UserGender" Type="Byte" />
+    <Property Name="UserActive" Type="Byte" />
+    <Property Name="UserGenderShow" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="UserActiveShow" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="database_firewall_rules">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="start_ip_address" />
+      <PropertyRef Name="end_ip_address" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="modify_date" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <Association Name="FK_Customer_UserId">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Inventory_UserID">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Inventory" Type="Self.Inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Inventory">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_UserId">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductPriceId_UserID">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="ProductPrice" Type="Self.ProductPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="ProductPrice">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="inventorydbEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Inventories" EntityType="Self.Inventory" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="ProductPrices" EntityType="Self.ProductPrice" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="Vw_Customer" EntityType="Self.Vw_Customer" />
+    <EntitySet Name="Vw_Inventory" EntityType="Self.Vw_Inventory" />
+    <EntitySet Name="Vw_Product" EntityType="Self.Vw_Product" />
+    <EntitySet Name="Vw_ProductPrice" EntityType="Self.Vw_ProductPrice" />
+    <EntitySet Name="Vw_Users" EntityType="Self.Vw_Users" />
+    <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
+    <AssociationSet Name="FK_Customer_UserId" Association="Self.FK_Customer_UserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Inventory_UserID" Association="Self.FK_Inventory_UserID">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Inventory" EntitySet="Inventories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_UserId" Association="Self.FK_Product_UserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductPriceId_UserID" Association="Self.FK_ProductPriceId_UserID">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="ProductPrice" EntitySet="ProductPrices" />
+    </AssociationSet>
+    <FunctionImport Name="Sp_ins_product">
+      <Parameter Name="ProductName" Mode="In" Type="String" />
+      <Parameter Name="ProductDesc" Mode="In" Type="String" />
+      <Parameter Name="ProductImage" Mode="In" Type="Binary" />
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_UpdateFee_Product">
+      <Parameter Name="ProductId" Mode="In" Type="Int32" />
+      <Parameter Name="ProductLastFee" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_Update_ProductLastStock">
+      <Parameter Name="InventoryCount" Mode="In" Type="Int32" />
+      <Parameter Name="ProductId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_Update_Product">
+      <Parameter Name="ProductId" Mode="In" Type="Int32" />
+      <Parameter Name="ProductName" Mode="In" Type="String" />
+      <Parameter Name="ProductDesc" Mode="In" Type="String" />
+      <Parameter Name="ProductImage" Mode="In" Type="Binary" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

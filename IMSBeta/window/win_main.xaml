@@ -1,0 +1,81 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IMSBeta.window"
+        xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" x:Class="IMSBeta.window.win_main"
+        mc:Ignorable="d"
+        Title="" Height="640" Width="628" WindowStartupLocation="CenterScreen" Closing="Window_Closing" WindowStyle="ToolWindow" Loaded="Window_Loaded">
+    <Grid Margin="0,0,-29,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="211*"/>
+            <ColumnDefinition Width="446*"/>
+        </Grid.ColumnDefinitions>
+        <Custom:Ribbon Margin="0,0,29,119" Grid.ColumnSpan="2" >
+            <Custom:Ribbon.QuickAccessToolBar>
+                <Custom:RibbonQuickAccessToolBar>
+
+                </Custom:RibbonQuickAccessToolBar>
+            </Custom:Ribbon.QuickAccessToolBar>
+
+
+            <!---->
+            <Custom:RibbonTab Header="Services" Height="100" Margin="0,0,0,-12" Width="612">
+                <Custom:RibbonGroup>
+                    <Custom:RibbonButton Label="Show Products" LargeImageSource="/img/product2.gif" Click="Btn_ShowProduct_Click" Width="80"/>
+                </Custom:RibbonGroup>
+                <Custom:RibbonGroup>
+                    <Custom:RibbonButton Label="User" LargeImageSource="/img/44.png" Click="Btn_ShowUser_Click" Width="80"/>
+                </Custom:RibbonGroup>
+
+                <Custom:RibbonGroup>
+                    <Custom:RibbonButton Label="Customer" LargeImageSource="/img/customer.png" Click="Btn_ShowCustomer_Click" Width="80"/>
+                </Custom:RibbonGroup>
+
+                <Custom:RibbonGroup>
+                    <Custom:RibbonButton Label="Change Password" LargeImageSource="/img/2.png" Click="btn_SetnewPass_click" Width="80"/>
+                </Custom:RibbonGroup>
+
+                <Custom:RibbonGroup Width="88" Height="81">
+                    <Custom:RibbonButton Label="BackUp" LargeImageSource="/img/server.png" Width="80"/>
+                </Custom:RibbonGroup>
+
+
+
+            </Custom:RibbonTab>
+            <!---->
+
+            <!---->
+
+
+        </Custom:Ribbon>
+
+        <Image x:Name="image1" HorizontalAlignment="Left" Height="231" Margin="10,368,0,0" VerticalAlignment="Top" Width="241" Source="/img/11.jpg" Stretch="Fill" Opacity="0.7" Grid.ColumnSpan="2"/>
+
+        <DockPanel HorizontalAlignment="Left" Height="64" LastChildFill="False" Margin="0,560,0,0" VerticalAlignment="Top" Width="628" Opacity="0.5" Background="#FFBAD3EF" Grid.ColumnSpan="2"/>
+        <Label x:Name="label" Content="Name :"  Margin="18,255,340,0" VerticalAlignment="Top"  Foreground="#FF0F610C" FontSize="16" Grid.Column="1"/>
+        <Label x:Name="lbl_name" Content="..." Margin="112,255,185,0" VerticalAlignment="Top"  Foreground="#FFF01010"  FontSize="16" Grid.Column="1"/>
+        <Label x:Name="label2" Content="Last Name :"  Margin="199,313,328,0" VerticalAlignment="Top"  Foreground="#FF0F610C" FontFamily="B Yekan" FontSize="16" Grid.ColumnSpan="2"/>
+        <Label x:Name="lbl_family" Content="..."  Margin="112,312,158,0" VerticalAlignment="Top" RenderTransformOrigin="0.579,0.038" Width="176" Foreground="#FFF01010" FontSize="16" Grid.Column="1"/>
+        <Label x:Name="label4" Content="Time :"  Margin="24,193,337,0" VerticalAlignment="Top" RenderTransformOrigin="8.447,6.962"  Foreground="#FF0F610C" FontSize="16" Grid.Column="1"/>
+        <Label x:Name="lbl_time" Content="18:06" HorizontalAlignment="Left" Margin="89,193,0,0" VerticalAlignment="Top" RenderTransformOrigin="7.526,6.692" Width="81" HorizontalContentAlignment="Center" Foreground="#FFF01010" FontSize="16" Grid.Column="1"/>
+        <Label x:Name="label6" Content="Inventory Management System" HorizontalAlignment="Left" Margin="48,429,0,0" VerticalAlignment="Top" Foreground="#FF181EA8" FontFamily="B Yekan" FontSize="18" FontWeight="Bold" Grid.Column="1">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF58C3E0"/>
+                    <GradientStop Color="#FFFDFDFD" Offset="0.987"/>
+                    <GradientStop Color="#FF57D0AC" Offset="0.228"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+
+
+
+
+
+
+
+
+    </Grid>
+</Window>

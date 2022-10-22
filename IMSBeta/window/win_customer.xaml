@@ -1,0 +1,123 @@
+﻿<Window x:Class="IMSBeta.window.win_customer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IMSBeta.window"
+        mc:Ignorable="d"
+  Title="win_customer" Height="700" Width="600" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Transparent" AllowsTransparency="True" Loaded="Window_Loaded">
+
+    <!--Change opening speed :)-->
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard Duration="00:00:00:01" Storyboard.TargetProperty="Opacity">
+                    <DoubleAnimation From="0" To="3" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid>
+
+        <Rectangle HorizontalAlignment="Center" Height="680" Stroke="Black" Fill="White" VerticalAlignment="Center" Width="580"/>
+        <Rectangle HorizontalAlignment="Center" Height="88" Margin="0,10,0,0" RadiusY="10" RadiusX="10" Stroke="Black" VerticalAlignment="Top" Width="580" MouseDown="Rectangle_MouseDown">
+            <Rectangle.Effect>
+                <DropShadowEffect/>
+            </Rectangle.Effect>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF7CB2F1" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        
+        <Label Content="Customers"  Margin="110,37,352,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+        <Image HorizontalAlignment="Left" Height="58" Margin="31,21,0,0" VerticalAlignment="Top" Width="70" Source="/img/customer.png"/>
+        <Image HorizontalAlignment="Left" Height="16" Margin="550,44,0,0" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.7,-0.062"
+               Source="/img/exit.png" Cursor="Hand" MouseDown="Image_MouseDown" />
+        <!--v11/m40-->
+        <!--DatGrid-->
+        <DataGrid Name="DataGridCustomer" AutoGenerateColumns="False" Margin="32,121,34,122" BorderThickness="1" VerticalGridLinesBrush="White" SelectionChanged="DataGridCustomer_SelectionChanged">
+
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Customer ID" Width="100" Binding="{Binding CustomerID}"/>
+
+
+                <DataGridTextColumn Header="Name" Width="100" Binding="{Binding CustomerName}"/>
+
+
+                <DataGridTextColumn Header="Tel" Width="100" Binding="{Binding CustomerTel}"/>
+
+
+                <DataGridTextColumn Header="Address" Width="130" Binding="{Binding CustomerAddress}"/>
+                <DataGridTextColumn Header="CustomerActive" Width="100" Binding="{Binding CustomerActive}"/>
+
+
+                
+
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Active Customer" Click="btn_ActiveCustomer_Click">
+                        <MenuItem.Icon>
+                            <Image Source="/img/price.png" Width="12" Height="12"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                </ContextMenu>
+
+
+            </DataGrid.ContextMenu>
+
+        </DataGrid>
+
+
+
+        <!--Buttons-->
+        <Button x:Name="Btn_EditCustomer" Content="Edit Customr"  HorizontalAlignment="Center" Margin="0,609,0,0" VerticalAlignment="Top" Width="110" Height="37"  FontSize="14.667" Foreground="#FF3E3709" Cursor="Hand" Click="Btn_EditCustomer_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF6C8EC9" Offset="0"/>
+                    <GradientStop Color="#FF224258" Offset="1"/>
+                    <GradientStop Color="#FFDAEBF3" Offset="0.783"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+
+
+        <Button x:Name="Btn_AddCustomer" Content="Add Customer" HorizontalAlignment="Left" Margin="81,609,0,0" VerticalAlignment="Top" Width="109" Height="37" FontSize="14.667" Foreground="#FF3E3709" Cursor="Hand" Click="Btn_AddCustomer_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF6C8EC9" Offset="0"/>
+                    <GradientStop Color="#FF224258" Offset="1"/>
+                    <GradientStop Color="#FFDAEBF3" Offset="0.783"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="Btn_DeleteCustomer" Content="Delete Customer"  Margin="418,610,74,0" VerticalAlignment="Top" Width="108" Height="37"  FontSize="14.667" Foreground="#FF3E3709" Cursor="Hand" Click="Btn_DeleteCustomer_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF6C8EC9" Offset="0"/>
+                    <GradientStop Color="#FF224258" Offset="1"/>
+                    <GradientStop Color="#FFDAEBF3" Offset="0.783"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+
+
+    </Grid>
+</Window>
